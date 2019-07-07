@@ -742,7 +742,7 @@ int executeAmbassador(int choice1, int choice2, int handPos, struct gameState *s
 
     for (i = 0; i < state->handCount[currentPlayer]; i++){
 	    if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1){
-	        j++;
+	        //j++;
 	    }
 	}
 
@@ -770,7 +770,7 @@ int executeAmbassador(int choice1, int choice2, int handPos, struct gameState *s
     for (j = 0; j < choice2; j++){
         for (i = 0; i < state->handCount[currentPlayer]; i++){
             if (state->hand[currentPlayer][i] == state->hand[currentPlayer][choice1]){
-                discardCard(i, currentPlayer, state, 1);
+                //discardCard(i, currentPlayer, state, 1);
                 break;
             }
         }
