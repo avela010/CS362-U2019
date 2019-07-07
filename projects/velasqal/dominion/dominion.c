@@ -694,20 +694,18 @@ void executeMinion(int choice1, int choice2, int handPos, struct gameState *stat
     state->numActions++; //+1 action
         
     //discard card from hand
-    discardCard(handPos, currentPlayer, state, 0);
+    //discardCard(handPos, currentPlayer, state, 0);
         
     if (choice1){		//+2 coins
         state->coins = state->coins + 2;
-    }
-        
-    else if (choice2){		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
+    }else if (choice2){		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
         //discard hand
         while(numHandCards(state) > 0){
             discardCard(handPos, currentPlayer, state, 0);
         }
             
         //draw 4
-        for (i = 0; i < 4; i++){
+        for (i = 0; i < 3; i++){
             drawCard(currentPlayer, state);
         }
             
