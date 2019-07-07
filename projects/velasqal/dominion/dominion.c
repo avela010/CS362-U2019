@@ -732,16 +732,16 @@ void executeMinion(int choice1, int choice2, int handPos, struct gameState *stat
     }
 }
 
-void executeAmbassador(int choice1, int choice2, int handPos, struct gameState *state, int currentPlayer){
+int executeAmbassador(int choice1, int choice2, int handPos, struct gameState *state, int currentPlayer){
     int i = 0;
     int j = 0;		//used to check if player has enough cards to discard
 
     if (choice2 > 2 || choice2 < 0){
-	    return;				
+	    return -1;				
 	}
 
     if (choice1 == handPos){
-	    return;
+	    return -1;
 	}
 
     for (i = 0; i < state->handCount[currentPlayer]; i++){
@@ -751,7 +751,7 @@ void executeAmbassador(int choice1, int choice2, int handPos, struct gameState *
 	}
 
     if (j < choice2){
-	  return;				
+	  return -1;				
 	}
 
     if (DEBUG) 
@@ -779,6 +779,8 @@ void executeAmbassador(int choice1, int choice2, int handPos, struct gameState *
             }
         }
     }
+
+    return 0;
 }
 
 void executeTribute(int currentPlayer, int nextPlayer, struct gameState *state){
@@ -1093,11 +1095,12 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
         return 0;
 		
     case ambassador:
-        executeAmbassador(choice1, choice2, handPos, state, currentPlayer);
+        if(executeAmbassador(choice1, choice2, handPos, state, currentPlayer) < 0){
+            return -1;
+        }
         return 0;
 		
     case cutpurse:
-
       updateCoins(currentPlayer, state, 2);
       for (i = 0; i < state->numPlayers; i++)
 	{
