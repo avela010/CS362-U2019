@@ -51,15 +51,10 @@ int main() {
   assert(result == 0);
 
   #if (NOISY_TEST == 1)
-    printf("Expect player1's cards to be different after shuffle function executed.\n");
-  #endif
-  assert(player1CardsShuffled == 0);
-
-  #if (NOISY_TEST == 1)
     printf("Expect player2's cards to be different after shuffle function executed.\n");
   #endif
   assert(player2CardsShuffled == 1);
-  
+
   printf("All tests passed!\n");
 
   return 0;
