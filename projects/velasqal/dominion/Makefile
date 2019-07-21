@@ -30,7 +30,7 @@ runtests: testDrawCard
 	cat dominion.c.gcov >> unittestresult.out
 
 unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o
-	echo "Result for running Dominion Game tests:" > unittestresults.out
+	echo "\nResult for running Dominion Game tests:" > unittestresults.out
 	echo "cardtest1.c:" >> unittestresults.out
 	gcc -o cardtest1 dominion.c rngs.c cardtest1.c $(CFLAGS)
 	./cardtest1 >> unittestresults.out
