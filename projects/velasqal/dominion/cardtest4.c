@@ -45,5 +45,7 @@ int main() {
   #endif
   assert(players[player3] != WINNER);
 
+    printf("All tests passed!\n");
+
   return 0;
 }
