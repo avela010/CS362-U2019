@@ -13,7 +13,6 @@ int main() {
   int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
             sea_hag, tribute, smithy};
   int player1 = 0;
-  int player2 = 1;
 
   #if (NOISY_TEST == 1)
     printf("Testing minion function with choice 1.\n");
@@ -34,6 +33,8 @@ int main() {
     printf("Expect number of coins to increase by 2 for choice 1.\n");
   #endif
   assert(gamestate.coins == numberOfCoins + 2);
+
+  printf("All tests passed!\n");
 
   return 0;
 }
