@@ -16,7 +16,7 @@ int main() {
   int player2 = 1;
 
   #if (NOISY_TEST == 1)
-    printf("Testing tribute function with choice 1.\n");
+    printf("Testing mine function with choice 1.\n");
   #endif
   initializeGame(2, kingdomCards, randomSeed, &gamestate);
 
