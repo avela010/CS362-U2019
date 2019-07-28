@@ -24,7 +24,7 @@ int main() {
 
   for (i = 0; i < 100; i++){
     // set random inputs.
-    int numPlayers = (rand() % 4) + 1; // sets number of players 1 to 4.
+    int numPlayers = (rand() % 3) + 2; // sets number of players 2 to 4.
     int choice1 = (rand() % 2);
     int choice2 = 0;
     int handPos = (rand() % MAX_PLAYERS);
@@ -72,4 +72,6 @@ int main() {
       }
     }
   }
+
+  printf("Minion Function Random Testing Completed!\n\n");
 }
