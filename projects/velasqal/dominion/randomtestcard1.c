@@ -28,9 +28,6 @@ int main() {
     int numPlayers = (rand() % 3) + 2; // sets number of players 2 to 4.
     int choice1 = (rand() % 2);
 
-    // printf("Number of players: %i\n", numPlayers);
-    // printf("choice1 value is: %i choice2 value is: %i\n", choice1, choice2);
-
     initializeGame(numPlayers, kingdomCards, randomSeed, &postGameState);
     
     for (j = 0; j < numPlayers; j++){
