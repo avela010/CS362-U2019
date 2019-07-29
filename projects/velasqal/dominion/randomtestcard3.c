@@ -33,7 +33,7 @@ int main() {
       currentPlayer = whoseTurn(&postGameState);
       int nextPlayer = currentPlayer + 1;
       if (nextPlayer >= (numPlayers)){
-        nextPlayer = (rand() % numPlayers) + 1;
+        nextPlayer = (rand() % numPlayers);
       }
       
       if(DEBUG){
