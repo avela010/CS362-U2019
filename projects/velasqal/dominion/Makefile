@@ -37,6 +37,12 @@ all: playdom player
 
 randomtestresults:	randomtestcard2.c	randomtestcard3.c	dominion.c
 	echo "\nResult for running Random Unit tests:" > randomtestresults.out
+
+	echo "randomtestcard1.c:" >> randomtestresults.out
+	gcc -o randomtestcard1 dominion.c rngs.c randomtestcard1.c $(CFLAGS)
+	./randomtestcard1 >> randomtestresults.out
+	gcov dominion.c -b -f >> randomtestresults.out
+
 	echo "randomtestcard2.c:" >> randomtestresults.out
 	gcc -o randomtestcard2 dominion.c rngs.c randomtestcard2.c $(CFLAGS)
 	./randomtestcard2 >> randomtestresults.out
@@ -48,4 +54,4 @@ randomtestresults:	randomtestcard2.c	randomtestcard3.c	dominion.c
 	gcov dominion.c -b -f >> randomtestresults.out 
 
 clean:
-	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe randomtestcard2 randomtestcard3
+	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe randomtestcard1 randomtestcard2 randomtestcard3
