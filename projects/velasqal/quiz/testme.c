@@ -3,16 +3,21 @@
 #include<stdlib.h>
 #include<time.h>
 
-char inputChar()
-{
-    // TODO: rewrite this function
-    return ' ';
+char inputChar(){
+  char randomCharacter = (rand() % 94) + 32;
+  return randomCharacter;
 }
 
-char *inputString()
-{
-    // TODO: rewrite this function
-    return "";
+char *inputString(){
+  int i = 0;
+  char* inputString = malloc(sizeof(char) * 6);
+    
+  for(i = 0; i < 5; i++){
+     inputString[i] = (rand() % (26)) + 97;
+  }
+  inputString[5] = '\0';
+
+  return inputString;
 }
 
 void testme()
