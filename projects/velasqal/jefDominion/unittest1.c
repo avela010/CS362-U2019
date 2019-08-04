@@ -21,7 +21,7 @@ int main() {
   gamestate.hand[player1][0] = estate;
 
   int handCount = gamestate.handCount[player1];
-  executeBaron(1, &gamestate, player1);
+  baronCard(1, player1, &gamestate);
 
   #if (NOISY_TEST == 1)
     printf("Expect number of buys increased by 1.\n");
