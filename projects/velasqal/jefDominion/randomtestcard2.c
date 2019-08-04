@@ -40,7 +40,8 @@ int main() {
     initializeGame(numPlayers, kingdomCards, randomSeed, &postGameState);
     memcpy(&preGameState, &postGameState, sizeof(struct gameState));// copy post game state to pre game state for later test.
     currentPlayer = whoseTurn(&postGameState);
-    executeMinion(choice1, choice2, handPos, &postGameState, currentPlayer);
+    //executeMinion(choice1, choice2, handPos, &postGameState, currentPlayer);
+    minionCard(0, 0, choice1, choice2, currentPlayer, &postGameState, handPos);
 
     /**************************** TEST CASES *****************************/
 

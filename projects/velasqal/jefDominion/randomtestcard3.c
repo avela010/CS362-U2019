@@ -26,6 +26,8 @@ int main() {
     // set random inputs.
     int numPlayers = (rand() % 3) + 2; // sets number of players 2 to 4.
     int randomSeed = (rand() % 1000) + 1;
+    int handPos = (rand() % MAX_PLAYERS);
+    int tributeRevealedCards[2] = {-1, -1};
 
     initializeGame(numPlayers, kingdomCards, randomSeed, &postGameState);
 
@@ -43,7 +45,8 @@ int main() {
       }
 
       memcpy(&preGameState, &postGameState, sizeof(struct gameState));// copy post game state to pre game state for later test.
-      executeTribute(currentPlayer, nextPlayer, &postGameState);
+      //executeTribute(currentPlayer, nextPlayer, &postGameState);
+      tributeCard(0, tributeRevealedCards, currentPlayer, nextPlayer, &postGameState, handPos);
       endTurn(&postGameState);
 
             /**************************** TEST CASES *****************************/
