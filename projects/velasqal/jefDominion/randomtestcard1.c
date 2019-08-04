@@ -37,7 +37,8 @@ int main() {
       if(choice2 == 0){
         postGameState.supplyCount[estate]--;
       }
-      executeBaron(choice1, &postGameState, currentPlayer);
+      //executeBaron(choice1, &postGameState, currentPlayer);
+      baronCard(choice1, currentPlayer, &postGameState);
 
       /**************************** TEST CASES *****************************/
 

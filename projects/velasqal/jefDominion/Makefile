@@ -81,10 +81,10 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	# ./unittest5 >> unittestresults.out
 	# gcov dominion.c -b >> unittestresults.out
 
-	# echo "randomtestcard1.c:" >> unittestresults.out
-	# gcc -o randomtestcard1 dominion.c rngs.c randomtestcard1.c $(CFLAGS)
-	# ./randomtestcard1 >> unittestresults.out
-	# gcov dominion.c -b -f >> unittestresults.out
+	echo "randomtestcard1.c:" >> unittestresults.out
+	gcc -o randomtestcard1 dominion.c rngs.c randomtestcard1.c $(CFLAGS)
+	./randomtestcard1 >> unittestresults.out
+	gcov dominion.c -b -f >> unittestresults.out
 
 	# echo "randomtestcard2.c:" >> unittestresults.out
 	# gcc -o randomtestcard2 dominion.c rngs.c randomtestcard2.c $(CFLAGS)
