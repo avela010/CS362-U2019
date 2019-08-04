@@ -23,7 +23,7 @@ int main() {
   int numberOfActions = gamestate.numActions;
   int numberOfCoins =  gamestate.coins;
 
-  executeMinion(1, 0, 2, &gamestate, player1);
+  mineCard(0, 0, 1, 0, player1, &gamestate, 6);
 
   #if (NOISY_TEST == 1)
     printf("Expect number of actions to have increased by 1.\n");
@@ -37,7 +37,7 @@ int main() {
 
    int numberOfplayer2CardsInHand =  gamestate.handCount[player2];
 
-  executeMinion(0, 2, 2, &gamestate, player2);
+  mineCard(0, 0, 0, 2, player2, &gamestate, 8);
   #if (NOISY_TEST == 1)
     printf("Expect number of hand count to have have changed.\n");
   #endif
