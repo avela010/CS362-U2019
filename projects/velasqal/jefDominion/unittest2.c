@@ -22,7 +22,7 @@ int main() {
   int numberOfAction = gamestate.numActions;
   int numberOfCoins = gamestate.coins;
 
-  executeMinion(1, 0, -1, &gamestate, player1);
+  minionCard(0, 0, 1, 0, player1, &gamestate, -1);
 
   #if (NOISY_TEST == 1)
     printf("Expect number of action to increase by 1 for choice 1.\n");
