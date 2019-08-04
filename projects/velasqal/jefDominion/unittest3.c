@@ -21,7 +21,7 @@ int main() {
 
   int preSupplyCount = gamestate.supplyCount[gamestate.hand[player1][0]];
 
-  executeAmbassador(1, 0, 3, &gamestate, player1);
+  ambassadorCard(0,0, 1, 0, player1,  &gamestate, 3);
 
   #if (NOISY_TEST == 1)
     printf("Expect supply count to have increased.\n");

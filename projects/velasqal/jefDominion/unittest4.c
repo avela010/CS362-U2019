@@ -14,6 +14,7 @@ int main() {
             sea_hag, tribute, smithy};
   int player1 = 0;
   int player2 = 1;
+  int tributeRevealedCards[2] = {-1, -1};
 
   #if (NOISY_TEST == 1)
     printf("Testing tribute function with choice 1.\n");
@@ -22,7 +23,7 @@ int main() {
 
   int preNumAction = gamestate.numActions;
 
-  executeTribute(player1, player2, &gamestate);
+  tributeCard(0, tributeRevealedCards, player1, player2, &gamestate, 7);
 
   #if (NOISY_TEST == 1)
     printf("Expect number of actions to have increased by 2.\n");
