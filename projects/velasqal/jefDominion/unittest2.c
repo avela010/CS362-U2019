@@ -14,6 +14,7 @@ int main() {
   int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
             sea_hag, tribute, smithy};
   int player1 = 0;
+  int player2 = 1;
   int numOfPlayers = 2;
 
   #if (NOISY_TEST == 1)
@@ -53,7 +54,7 @@ int main() {
     printf("Expect hand count for player 1 to be equal to 4: Failed!\n");
   }
 
-  if((gamestate.handCount[player1]) == 4){
+  if((gamestate.handCount[player2]) == 4){
     printf("Expect hand count for player 2 to be equal to 4: Passed!\n");
   }else{
     printf("Expect hand count for player 2 to be equal to 4: Failed!\n");
