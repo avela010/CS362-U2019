@@ -81,20 +81,20 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	./unittest5 >> unittestresults.out
 	gcov dominion.c -b >> unittestresults.out
 
-	echo "randomtestcard1.c:" >> unittestresults.out
-	gcc -g -o randomtestcard1 dominion.c rngs.c randomtestcard1.c $(CFLAGS)
-	./randomtestcard1 >> unittestresults.out
-	gcov dominion.c -b -f >> unittestresults.out
+	# echo "randomtestcard1.c:" >> unittestresults.out
+	# gcc -g -o randomtestcard1 dominion.c rngs.c randomtestcard1.c $(CFLAGS)
+	# ./randomtestcard1 >> unittestresults.out
+	# gcov dominion.c -b -f >> unittestresults.out
 
-	echo "randomtestcard2.c:" >> unittestresults.out
-	gcc -g -o randomtestcard2 dominion.c rngs.c randomtestcard2.c $(CFLAGS)
-	./randomtestcard2 >> unittestresults.out
-	gcov dominion.c -b -f >> unittestresults.out
+	# echo "randomtestcard2.c:" >> unittestresults.out
+	# gcc -g -o randomtestcard2 dominion.c rngs.c randomtestcard2.c $(CFLAGS)
+	# ./randomtestcard2 >> unittestresults.out
+	# gcov dominion.c -b -f >> unittestresults.out
 
-	echo "randomtestcard3.c:" >> unittestresults.out
-	gcc -g -o randomtestcard3 dominion.c rngs.c randomtestcard3.c $(CFLAGS)
-	./randomtestcard3 >> unittestresults.out
-	gcov dominion.c -b -f >> unittestresults.out 
+	# echo "randomtestcard3.c:" >> unittestresults.out
+	# gcc -g -o randomtestcard3 dominion.c rngs.c randomtestcard3.c $(CFLAGS)
+	# ./randomtestcard3 >> unittestresults.out
+	# gcov dominion.c -b -f >> unittestresults.out 
 
 cardtest1: cardtest1.c dominion.o
 	gcc -o cardtest1 dominion.c rngs.c cardtest1.c $(CFLAGS)

@@ -14,11 +14,12 @@ int main() {
   int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
             sea_hag, tribute, smithy};
   int player1 = 0;
+  int numOfPlayers = 2;
 
   #if (NOISY_TEST == 1)
     printf("Testing minion function with choice 1.\n");
   #endif
-  initializeGame(2, kingdomCards, randomSeed, &gamestate);
+  initializeGame(numOfPlayers, kingdomCards, randomSeed, &gamestate);
   memcpy(&preGameState, &gamestate, sizeof(struct gameState));
 
   minionCard(0, 0, 1, 0, player1, &gamestate, -1);
@@ -35,6 +36,27 @@ int main() {
     printf("Expect number of coins to increase by 2 for choice 1: Passed!\n");
   }else{
     printf("Expect number of coins to increase by 2 for choice 1: Failed!\n");
+  }
+
+  #if (NOISY_TEST == 1)
+    printf("Testing minion function with choice 2.\n");
+  #endif
+
+  initializeGame(2, kingdomCards, randomSeed, &gamestate);
+  memcpy(&preGameState, &gamestate, sizeof(struct gameState));
+
+  minionCard(0, 0, 0, 1, player1, &gamestate, -1);
+
+  if((gamestate.handCount[player1]) == 4){
+    printf("Expect hand count for player 1 to be equal to 4: Passed!\n");
+  }else{
+    printf("Expect hand count for player 1 to be equal to 4: Failed!\n");
+  }
+
+  if((gamestate.handCount[player1]) == 4){
+    printf("Expect hand count for player 2 to be equal to 4: Passed!\n");
+  }else{
+    printf("Expect hand count for player 2 to be equal to 4: Failed!\n");
   }
 
   return 0;
