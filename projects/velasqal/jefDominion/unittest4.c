@@ -21,7 +21,7 @@ int main() {
     printf("Testing tribute function with choice 1.\n");
   #endif
   initializeGame(2, kingdomCards, randomSeed, &gamestate);
-
+  memcpy(&preGameState, &gamestate, sizeof(struct gameState));
   tributeCard(0, tributeRevealedCards, player1, player2, &gamestate, 3);
 
   /**************************** TEST CASES *****************************/
