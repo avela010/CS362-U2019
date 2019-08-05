@@ -36,25 +36,25 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	./cardtest1 >> unittestresults.out
 	gcov dominion.c -b >> unittestresults.out 
 	
-	# echo "cardtest2.c:" >> unittestresults.out
-	# gcc -o cardtest2 dominion.c rngs.c cardtest2.c $(CFLAGS)
-	# ./cardtest2 >> unittestresults.out
-	# gcov dominion.c -b >> unittestresults.out 
+	echo "cardtest2.c:" >> unittestresults.out
+	gcc -o cardtest2 dominion.c rngs.c cardtest2.c $(CFLAGS)
+	./cardtest2 >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out 
 	
-	# echo "cardtest3.c:" >> unittestresults.out
-	# gcc -o cardtest3 dominion.c rngs.c cardtest3.c $(CFLAGS)
-	# ./cardtest3 >> unittestresults.out
-	# gcov dominion.c -b >> unittestresults.out 
+	echo "cardtest3.c:" >> unittestresults.out
+	gcc -o cardtest3 dominion.c rngs.c cardtest3.c $(CFLAGS)
+	./cardtest3 >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out 
 	
-	# echo "cardtest4.c:" >> unittestresults.out
-	# gcc -o cardtest4 dominion.c rngs.c cardtest4.c $(CFLAGS)
-	# ./cardtest4 >> unittestresults.out
-	# gcov dominion.c -b >> unittestresults.out 
+	echo "cardtest4.c:" >> unittestresults.out
+	gcc -o cardtest4 dominion.c rngs.c cardtest4.c $(CFLAGS)
+	./cardtest4 >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out 
 
-	# echo "cardtest5.c:" >> unittestresults.out
-	# gcc -o cardtest5 dominion.c rngs.c cardtest5.c $(CFLAGS)
-	# ./cardtest5 >> unittestresults.out
-	# gcov dominion.c -b >> unittestresults.out 
+	echo "cardtest5.c:" >> unittestresults.out
+	gcc -o cardtest5 dominion.c rngs.c cardtest5.c $(CFLAGS)
+	./cardtest5 >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out 
 
 	echo "unittest1.c:" >> unittestresults.out
 	gcc -o unittest1 dominion.c rngs.c unittest1.c $(CFLAGS)
