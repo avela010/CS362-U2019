@@ -10,6 +10,7 @@
 int main() {
   int randomSeed = 1000;
   struct gameState gamestate;
+  struct gameState preGameState;
   int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
             sea_hag, tribute, smithy};
   int player1 = 0;
@@ -21,14 +22,15 @@ int main() {
   #endif
   initializeGame(2, kingdomCards, randomSeed, &gamestate);
 
-  int preNumAction = gamestate.numActions;
+  tributeCard(0, tributeRevealedCards, player1, player2, &gamestate, 3);
 
-  tributeCard(0, tributeRevealedCards, player1, player2, &gamestate, 7);
+  /**************************** TEST CASES *****************************/
 
-  #if (NOISY_TEST == 1)
-    printf("Expect number of actions to have increased by 2.\n");
-  #endif
-  assert(gamestate.numActions == (preNumAction + 2));
+  if((preGameState.numActions + 2) == gamestate.numActions){
+    printf("Number of game state actions increased by 2: Passed!\n");
+  }else{
+    printf("Number of game state actions increased by 2: Failed!\n");
+  }
 
   return 0;
 }
