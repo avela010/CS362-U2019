@@ -10,6 +10,7 @@
 int main() {
   int randomSeed = 1000;
   struct gameState gamestate;
+  struct gameState preGameState;
   int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
             sea_hag, tribute, smithy};
   int player1 = 0;
@@ -19,26 +20,28 @@ int main() {
   #endif
   initializeGame(2, kingdomCards, randomSeed, &gamestate);
   gamestate.hand[player1][0] = estate;
+  memcpy(&preGameState, &gamestate, sizeof(struct gameState));
 
   int handCount = gamestate.handCount[player1];
   baronCard(1, player1, &gamestate);
 
-  #if (NOISY_TEST == 1)
-    printf("Expect number of buys increased by 1.\n");
-  #endif
-  assert(gamestate.numBuys == 2);
+  if ((preGameState.numBuys + 1) == gamestate.numBuys){
+    printf("Expect number of buys increased by 1. Passed!\n");
+  }else{
+    printf("Expect number of buys increased by 1. Failed!\n");
+  }
 
-  #if (NOISY_TEST == 1)
-    printf("Expect number of coins increased by 4.\n");
-  #endif
-  assert(gamestate.coins == 6);
+  if ((preGameState.coins + 4) == gamestate.coins){
+    printf("Expect number of coins increased by 4. Passed!\n");
+  }else{
+    printf("Expect number of coins increased by 4. Failed!\n");
+  }
 
- #if (NOISY_TEST == 1)
-    printf("Expect player1 hand count decreased by 1.\n");
-  #endif
-  assert(gamestate.handCount[player1] == (handCount - 1));
-
-  printf("All tests passed!\n");
+  if ((preGameState.handCount[player1] - 1) == (gamestate.handCount[player1])){
+    printf("Expect player1 hand count decreased by 1. Passed!\n");
+  }else{
+    printf("Expect player1 hand count decreased by 1. Failed!\n");
+  }
 
   return 0;
 }
