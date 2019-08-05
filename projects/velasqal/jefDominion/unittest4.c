@@ -15,7 +15,7 @@ int main() {
             sea_hag, tribute, smithy};
   int player1 = 0;
   int player2 = 1;
-  int tributeRevealedCards[2] = {-1, -1};
+  int tributeRevealedCards[2] = {copper, silver};
 
   #if (NOISY_TEST == 1)
     printf("Testing tribute function with choice 1.\n");
@@ -26,10 +26,10 @@ int main() {
 
   /**************************** TEST CASES *****************************/
 
-  if((preGameState.numActions + 2) == gamestate.numActions){
-    printf("Number of game state actions increased by 2: Passed!\n");
+  if((preGameState.coins + 4) == gamestate.coins){
+    printf("Number of game state coins increased by 4: Passed!\n");
   }else{
-    printf("Number of game state actions increased by 2: Failed!\n");
+    printf("Number of game state coins increased by 4: Failed!\n");
   }
 
   return 0;
